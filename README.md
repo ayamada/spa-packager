@@ -1,5 +1,8 @@
 # @tir.jp/spa-packager
 
+[![npm version](https://img.shields.io/npm/v/@tir.jp/spa-packager.svg)](https://www.npmjs.com/package/@tir.jp/spa-packager)
+[![License](https://img.shields.io/npm/l/@tir.jp/spa-packager.svg)](https://www.npmjs.com/package/@tir.jp/spa-packager)
+
 SPAのリリースに際して、ブラウザのキャッシュ問題やリリース作業中のダウンタイムを防ぐためのシンプルなデプロイ補助ツールです。
 
 ## 何をするツールか？ (Before / After)

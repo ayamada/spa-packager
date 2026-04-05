@@ -1,7 +1,22 @@
 {
   "name": "@tir.jp/spa-packager",
   "version": "1.0.0",
-  "description": "A tool for packaging SPA with history.replaceState serial rewriting",
+  "description": "A deployment utility for SPAs that prevents browser caching and downtime by renaming directories to timestamps and generating redirect HTML",
+  "keywords": [
+    "spa",
+    "deployment",
+    "cache-busting",
+    "zero-downtime",
+    "redirect"
+  ],
+  "homepage": "https://github.com/ayamada/spa-packager#readme",
+  "bugs": {
+    "url": "https://github.com/ayamada/spa-packager/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayamada/spa-packager.git"
+  },
   "main": "cli.mjs",
   "bin": {
     "spa-packager": "cli.mjs"
