@@ -1,0 +1,20 @@
+{
+  "name": "@tir.jp/spa-packager",
+  "version": "1.0.0",
+  "description": "A tool for packaging SPA with history.replaceState serial rewriting",
+  "main": "cli.mjs",
+  "bin": {
+    "spa-packager": "cli.mjs"
+  },
+  "author": "ayamada",
+  "contributors": [
+    "mac"
+  ],
+  "license": "Zlib",
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
