@@ -63,11 +63,14 @@ html/
 これを防ぐため、SPA本体側の `index.html` （上記の例では `html/_main/index.html`）の `<head>` 等に以下のスニペットを記述することを推奨します。
 
 ```html
-<script>((p)=>{if(p!=='/'){history.replaceState(0,0,'..');document.write(`<base href="${p}">`)}})(location.pathname)</script>
+<script>((p)=>{if(p!=='/'){history.replaceState(0,0,'..');const b=document.createElement('base');b.href=p;document.currentScript.after(b)}})(location.pathname)</script>
 ```
 
 これにより、リダイレクトされた直後にアドレスバーのURLからシリアル部分が隠蔽されます（同時に `<base>` タグによって相対パスでのリソース読み込みも正常に機能します）。
 URLが綺麗に保たれるため、コンテンツ内容の更新があった際にも、同じページURLのまま再読み込み等で新しいコンテンツにアクセスできるようになります。
+
+**実装のポイント:**
+以前は `document.write` を使用していましたが、モダンなブラウザでは非推奨（deprecated）となっているため、現在は `document.currentScript.after` を用いて動的に `<base>` タグを挿入する方式を推奨しています。このコードは同期的に実行されるため、スクリプト以降に記述されたリソース（CSSやJS等）は正しく新しいベースURLを参照します。
 
 ## 開発環境について
 
